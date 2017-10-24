@@ -12,7 +12,12 @@ import javafx.stage.Stage;
  * Created by sirshadow on 10/24/17.
  */
 public class AlertBox {
-    public static void display(String title,String message){
+    /**
+     * Used to create basic alert boxes!
+     * @param title of the alert box
+     * @param message to display
+     */
+    static void display(String title,String message){
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle(title);

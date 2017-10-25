@@ -11,6 +11,7 @@ public class Main extends Application {
 
     static final String TITLE = "File Editor";
     private static final int WIDTH = 600,HEIGHT = 475;
+    static final String PATH = Main.class.getProtectionDomain().getCodeSource().getLocation().getPath().replace("File_Editor.jar","");
 
     public static void main(String[] args) {
         launch(args);
@@ -23,7 +24,6 @@ public class Main extends Application {
         Scene scene = new Scene(root, WIDTH,HEIGHT);
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
-        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
         primaryStage.show();
     }
 }

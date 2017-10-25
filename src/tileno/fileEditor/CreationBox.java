@@ -35,7 +35,7 @@ public class CreationBox {
 
         Button button = new Button("Done");
         button.setOnAction(event -> {
-            File f = new File(Main.class.getProtectionDomain().getCodeSource().getLocation().getPath().replace("File_Editor.jar","") +  field.getText() + ".txt");
+            File f = new File(Main.PATH +  field.getText() + ".txt");
             try {
                 f.createNewFile();
             } catch (IOException e) {

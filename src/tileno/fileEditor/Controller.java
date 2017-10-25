@@ -49,7 +49,7 @@ public class Controller implements Initializable {
     protected void load(ActionEvent actionEvent){
         BufferedReader br;
         try {
-            br = new BufferedReader(new FileReader(Main.class.getProtectionDomain().getCodeSource().getLocation().getPath().replace("File_Editor.jar","")  + input.getText() + ".txt"));
+            br = new BufferedReader(new FileReader(Main.PATH + input.getText() + ".txt"));
             String line;
             while ((line = br.readLine()) != null) {
                 output.setText(line);
@@ -71,7 +71,7 @@ public class Controller implements Initializable {
      */
     @FXML
     protected void save(ActionEvent actionEvent) throws IOException {
-        FileOutputStream out = new FileOutputStream(Main.class.getProtectionDomain().getCodeSource().getLocation().getPath().replace("File_Editor.jar","") + input.getText() + ".txt");
+        FileOutputStream out = new FileOutputStream(Main.PATH + input.getText() + ".txt");
         byte[] data = output.getText().getBytes();
         out.write(data);
         out.close();

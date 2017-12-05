@@ -42,6 +42,7 @@ public class Controller implements Initializable {
 
     /**
      * Used to load a file
+     * StringBuilder is used to make the correct text as iw would look in the file
      * If the file does not exist it throws and shows an 'error' alert box
      * @param actionEvent
      */
@@ -50,11 +51,14 @@ public class Controller implements Initializable {
         BufferedReader br;
         try {
             br = new BufferedReader(new FileReader(Main.PATH + input.getText() + ".txt"));
+            StringBuilder sb = new StringBuilder();
             String line;
             while ((line = br.readLine()) != null) {
-                output.setText(line);
+                sb.append(line).append("\n");
                 state.setText(input.getText() + " has loaded!");
             }
+
+            output.setText(sb.toString());
             br.close();
             output.setEditable(true);
         }
